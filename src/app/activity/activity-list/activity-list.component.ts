@@ -10,5 +10,5 @@ import { Activity } from '../../activity.interface';
 })
 export class ActivityListComponent {
 
-  @Input() activity?: Activity
+  @Input() activity: Activity | undefined;
 }

@@ -9,8 +9,9 @@ import { Activity } from './activity.interface';
 export class BoredService {
 
   private http = inject(HttpClient);
-  private baseUrl = 'https://bored-api.appbrewery.com';
+// private baseUrl = 'https://bored-api.appbrewery.com';
 
+/*
   getRandomActivity(): Observable<Activity> {
     return this.http.get<Activity>(`${this.baseUrl}/random`);
   }
@@ -18,5 +19,15 @@ export class BoredService {
   getFilteredActivities(type: string): Observable<Activity> {
     return this.http.get<Activity>(`${this.baseUrl}/filter?type=${type}`);
   }
+*/
+
+getRandomActivity(): Observable<any> {
+  return this.http.get('/api/random');
+}
+
+getFilteredActivities(type: string): Observable<any> {
+  return this.http.get(`/api/filter?type=${type}`);
+}
+
 
 }

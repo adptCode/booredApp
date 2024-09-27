@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter-buttons',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './filter-buttons.component.html',
   styleUrl: './filter-buttons.component.css'
 })

@@ -1,1 +1,37 @@
-<p>filter-buttons works!</p>
+<div class="row text-center">
+  <div class="col">
+    <div class="btn-group mb-4" role="group" aria-label="Filter buttons">
+      <button
+        class="btn"
+        [ngClass]="{'btn-primary': currentFilter === 'social', 'btn-light': currentFilter !== 'social'}"
+        (click)="setFilter('social')">Social</button>
+
+      <button
+        class="btn"
+        [ngClass]="{'btn-primary': currentFilter === 'education', 'btn-light': currentFilter !== 'education'}"
+        (click)="setFilter('education')">Educació</button>
+
+      <button
+        class="btn"
+        [ngClass]="{'btn-primary': currentFilter === 'charity', 'btn-light': currentFilter !== 'charity'}"
+        (click)="setFilter('charity')">Caritat</button>
+
+      <button
+        class="btn"
+        [ngClass]="{'btn-primary': currentFilter === 'cooking', 'btn-light': currentFilter !== 'cooking'}"
+        (click)="setFilter('cooking')">Cuinar</button>
+
+      <button
+        class="btn"
+        [ngClass]="{'btn-primary': currentFilter === 'relaxation', 'btn-light': currentFilter !== 'relaxation'}"
+        (click)="setFilter('relaxation')">Relaxació</button>
+
+        <button
+        class="btn"
+        [ngClass]="{'btn-primary': currentFilter === 'intenseWork', 'btn-light': currentFilter !== 'intenseWork'}"
+        (click)="setFilter('intenseWork')">Treball intens</button>
+    </div>
+
+  </div>
+</div>
+

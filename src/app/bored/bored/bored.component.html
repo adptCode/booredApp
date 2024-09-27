@@ -1,1 +1,41 @@
-<p>bored works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="mb-4">
+        <img src="/assets/boored-logo.png" alt="logo" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+
+  <div class="my-2">
+    <app-filter-buttons (filterChange)="onFilterChange($event)" />
+  </div>
+
+  <div class="row text-center">
+    <div class="col">
+      <div class="background-container">
+        <div class="text-center mb-4"></div>
+        <!-- Illustrazione centrale -->
+        <div class="image-container">
+          <img
+            src="/assets/boored-img.png"
+            alt="Illustration"
+            class="img-fluid illustration"
+          />
+        </div>
+
+        <!-- Testo centrale -->
+        <div class="mb-3">
+          <h2>TROBA ALGUNA COSA A FER</h2>
+        </div>
+        <button class="btn btn-dark btn-generar" (click)="generateActivity()">
+          Generar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 text-center">
+  <app-activity-list [activity]="activity" />
+</div>
