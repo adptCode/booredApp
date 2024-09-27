@@ -1,33 +1,31 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Activity } from './activity.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BoredService {
-
   private http = inject(HttpClient);
-// private baseUrl = 'https://bored-api.appbrewery.com';
 
-/*
   getRandomActivity(): Observable<Activity> {
-    return this.http.get<Activity>(`${this.baseUrl}/random`);
+    return this.http
+      .get<Activity>('/api/random')
+      .pipe(catchError(this.handleError));
   }
 
   getFilteredActivities(type: string): Observable<Activity> {
-    return this.http.get<Activity>(`${this.baseUrl}/filter?type=${type}`);
+    return this.http.get<Activity[]>(`/api/filter?type=${type}`).pipe(
+      map((activities: Activity[]) => activities[0]),
+      catchError(this.handleError)
+    );
   }
-*/
 
-getRandomActivity(): Observable<any> {
-  return this.http.get('/api/random');
-}
-
-getFilteredActivities(type: string): Observable<any> {
-  return this.http.get(`/api/filter?type=${type}`);
-}
-
-
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 429) {
+      return throwError(() => new Error('Too Many Requests'));
+    }
+    return throwError(() => new Error('Something went wrong'));
+  }
 }
