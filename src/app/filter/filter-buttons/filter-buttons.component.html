@@ -3,7 +3,7 @@
   <div class="col mb-4">
     <button
       class="btn p-3 m-3 rounded-pill"
-      [ngClass]="{'btn-primary': currentFilter === 'social', 'btn-light': currentFilter !== 'social'}"
+      [ngClass]="{'btn-primary': currentFilter === 'social', 'btn-light': currentFilter === 'null'}"
       (click)="setFilter('social')"><strong>Social</strong></button>
 
     <button
@@ -28,8 +28,8 @@
 
       <button
       class="btn p-3 m-3 rounded-pill"
-      [ngClass]="{'btn-primary': currentFilter === 'intenseWork', 'btn-light': currentFilter !== 'intenseWork'}"
-      (click)="setFilter('intenseWork')"><strong>Treball intens</strong></button>
+      [ngClass]="{'btn-primary': currentFilter === 'busywork', 'btn-light': currentFilter !== 'busywork'}"
+      (click)="setFilter('busywork')"><strong>Treball intens</strong></button>
   </div>
 
 </div>

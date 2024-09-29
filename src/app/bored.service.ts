@@ -17,7 +17,10 @@ export class BoredService {
 
   getFilteredActivities(type: string): Observable<Activity> {
     return this.http.get<Activity[]>(`/api/filter?type=${type}`).pipe(
-      map((activities: Activity[]) => activities[0]),
+      map((activities: Activity[]) => {
+        const randomIndex = Math.floor(Math.random() * activities.length);
+        return activities[randomIndex];
+      }),
       catchError(this.handleError)
     );
   }
