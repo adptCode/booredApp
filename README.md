@@ -1,27 +1,65 @@
 # BooredApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+BooredApp is an Angular application that suggests random activities when you're bored. It fetches suggestions using an external API and allows filtering by activity type.
 
-## Development server
+## Quick Start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 1. Clone the repository
 
-## Code scaffolding
+```bash
+git clone https://github.com/adptCode/booredApp.git
+cd booredApp
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. Install dependencies
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 3. Start the application
 
-## Running unit tests
+Run the project using the custom start script that includes CORS proxy configuration:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm start
+```
 
-## Running end-to-end tests
+Open your browser and navigate to `http://localhost:4200/`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 4. Proxy Configuration
 
-## Further help
+The project uses a proxy to handle CORS issues with the external API. This is automatically configured in the `npm start` script.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## API Information
+
+BooredApp retrieves activities from the [Bored API](https://bored-api.appbrewery.com/). The API provides both random activities and the ability to filter activities by type.
+
+- **API Base URL**: `https://bored-api.appbrewery.com`
+- **Endpoints**:
+  - `/random`: Fetches a random activity.
+  - `/filter?type={type}`: Fetches activities filtered by type (e.g., recreational, social, education).
+
+Example usage:
+
+- Random activity: `https://bored-api.appbrewery.com/random`
+- Filtered activity: `https://bored-api.appbrewery.com/filter?type=recreational`
+
+## Tech Stack
+
+- **Frontend**: Angular
+- **Styles**: Bootstrap
+- **Language**: TypeScript
+- **Package Manager**: npm
+- **API**: [Bored API](https://bored-api.appbrewery.com/)
+
+## Scripts
+
+- **Start**: `npm start` - Runs the application with the CORS proxy setup.
+- **Build**: `ng build` - Builds the production version of the app.
+
+## License
+
+This project is licensed under the MIT License.
+
+
