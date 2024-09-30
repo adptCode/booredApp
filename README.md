@@ -2,6 +2,10 @@
 
 BooredApp is an Angular application that suggests random activities when you're bored. It fetches suggestions using an external API and allows filtering by activity type.
 
+## Demo
+
+You can check out a live demo of the project here: [Live Demo](https://alessandrodptbooredapp.netlify.app)
+
 ## Quick Start
 
 ### 1. Clone the repository
